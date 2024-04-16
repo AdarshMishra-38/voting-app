@@ -1,0 +1,79 @@
+{% extends "layout.html" %} 
+{% load static %}
+{% block title %} Votepage {% endblock title %}
+{% block content %} 
+
+
+<div class="row justify-content-center my-5">
+ 
+  <div class="col-lg-6">
+     <form  method = "post" action="http://localhost:8000/polls/pollresult/" >
+      {% csrf_token %}
+      <h2 id="poll-title">{{passed_data.Title}}</h2>
+      <label for="name" class="form-label mt-3">Name:</label>
+      <div class="input-group mb-3">
+        <span class="input-group-text">
+          <i class="bi bi-person-fill"></i> </span>
+        <input type="text" class="form-control " name="name" placeholder="e.g. Adarsh">
+  
+        <span class="input-group-text formtooltip" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Enter your name">
+          <i class="bi bi-question"></i>
+        </span>
+      </div>
+
+
+      <label for="age" class="form-label mt-3">Age:</label>
+      <div class="input-group mb-3">
+        <span class="input-group-text">
+          <i class="bi bi-envelope-fill"></i>
+        </span>
+        <input type="text" class="form-control" name="age" placeholder="e.g. adarsh@example.com">
+        <span class="input-group-text formtooltip" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Enter email we can reply to...">
+          <i class="bi bi-question"></i>
+        </span>
+      </div>
+
+      <label for="district" class="form-label mt-3">District:</label>
+      <div class="input-group mb-3">
+        <span class="input-group-text"> 
+          <i class="bi bi-envelope-fill"></i>
+        </span>
+        <input type="text" class="form-control" name="district" placeholder="e.g. adarsh@example.com">
+        <span class="input-group-text formtooltip" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Enter email we can reply to...">
+          <i class="bi bi-question"></i>
+        </span>
+      </div>
+
+
+      
+      <label for="votefor" class="form-label mt-3">Vote for:</label>
+      <div class="input-group mb-3">
+        <span class="input-group-text">
+          <i class="bi bi-envelope-fill"></i>
+        </span>
+        <select id="vote-option-container" name="votefor" >
+          {% for key, value in passed_data.items %}
+          {% if key != 'Title' and key != 'csrfmiddlewaretoken' %}
+          <option value="{{value}}">{{value }}</option>
+          {% endif %}
+          {% endfor %} 
+
+          
+         
+        </select>        <span class="input-group-text formtooltip" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Enter email we can reply to...">
+          <i class="bi bi-question"></i>
+        </span>
+      </div>
+      <div class="text-center mb-4">
+        <button type="submit" class="btn btn-danger" >Submit</button>
+      </div>
+    </form> 
+
+
+
+  </div>
+</div>
+
+<script src="{% static "js/votepage.js" %}" type="module"></script>
+
+{% endblock content %}

@@ -1,0 +1,27 @@
+
+
+{% extends "layout.html" %} 
+{% load static  %}
+{% block title %} results{% endblock title %}
+{% block content %} 
+    <link rel="stylesheet" href="{% static "css/results.css" %}" />
+<div class="bar-graph">
+  <h3 style="text-align:center; ">Result:</h3>
+{% for key,value in infos.items %}  
+{% if key != 'Title' and key != 'csrfmiddlewaretoken' %}
+<div style="display:flex; justify-content:space-between;" class="option-container">
+<option value="{{value}}">{{value }}</option> <span>0</span>
+
+</div>
+{% endif %}
+  
+{% endfor %}
+</div>
+{% comment %} {{data_from_db}} {% endcomment %}
+<script>
+  var data = {{ data_as_json|safe }};
+</script>
+
+<script src="{% static "js/results.js" %}"></script> 
+
+{% endblock content %}

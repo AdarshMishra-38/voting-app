@@ -1,0 +1,25 @@
+article{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    border-bottom: 2px solid wheat;
+    /* overflow: scroll;  */
+}
+
+article>div{
+    /* border: 2px solid red; */
+    margin: 20px;
+    border-right: 2px solid wheat;
+    border-left: 2px solid wheat;
+    padding: 10px;
+
+
+
+
+}
+
+.center{
+    width: fit-content;
+    height: fit-content;
+}
+

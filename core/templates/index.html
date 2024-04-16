@@ -1,0 +1,54 @@
+{% extends "layout.html" %} 
+{% load static  %}
+{% block title %} home{% endblock title %} 
+
+{%block content %}
+<div id="mid-section">
+    <div class="container" >
+        <div class="container-text">
+            <h3>About us</h3>
+            <p>We're on a mission to revolutionize democracy. Our e-voting platform makes voting easy, secure, and accessible for all. Join us in shaping the future, one click at a time.</p>
+        </div>
+        <div class="container-img">
+            <img src="{% static "./media/voteimg.jpg" %}" alt="voting img" srcset="" height="350px" width="650px" style="border-radius: 50px">
+        </div>
+    </div>
+    <div class="container">
+        <div class="container-img">
+            <img src="{% static "./media/whyneed.jpg" %}" alt="voting img" srcset="" height="350px" width="650px" style="border-radius: 50px">
+        </div>
+        <div class="container-text">
+            <h3>Why do we need an e-voting platform ?</h3>
+            <p>One of the main reasons modern organizations switch to online voting is that they can give their voters the convenience of voting from anywhere, on any device. Since they are given a username and password to access their ballot, all they need is a secure network on which to cast their vote.</p>
+        </div>
+    </div>
+    <h3 id="feature-heading">Features</h3>
+    <div id="feature-section">
+        <div class="feature-items">
+            <h3>Secure Authentication</h3>
+            <p>Users should be able to securely authenticate themselves before accessing the voting platform.</p>
+
+        </div>
+        <div class="feature-items">
+            <h3>Ballot Creation and Management</h3>
+            <p>The platform should allow administrators to create and manage ballots for various elections, including setting up candidates or propositions, defining voting periods, and configuring voting rules.</p>
+        </div>
+        <div class="feature-items">
+            <h3>Secure Voting Mechanism</h3>
+            <p>The website should provide a secure and tamper-proof mechanism for voters to cast their votes. This may involve encryption techniques to ensure the confidentiality and integrity of votes, as well as measures to prevent duplicate or fraudulent voting.</p>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="container-img">
+            <img src="{% static "./media/voteimg.webp" %}" alt="voting img" srcset="" height="350px" width="650px" style="border-radius: 50px">
+        </div>
+        <div class="container-text">
+            <h3>sponsors</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus culpa qui soluta veniam modi ut ab aspernatur? Vitae, necessitatibus quos dolore ea cum, nihil soluta iusto, vero similique obcaecati eveniet?</p>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+

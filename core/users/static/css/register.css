@@ -1,0 +1,18 @@
+.user-registration{
+/* border:  2px solid red; */
+text-align: left;
+}
+
+.form-btn{
+     margin-left: 246px;
+}
+.user-registration div{
+    margin: 10px;
+}
+
+.center{
+    height: fit-content;
+    width: fit-content;
+    margin-left: 32%;
+    
+}

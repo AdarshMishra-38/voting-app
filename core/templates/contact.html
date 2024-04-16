@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+contact
+{% endblock title %}
+
+{% block content %}
+
+<div class="row justify-content-center my-5">
+    <div class="col-lg-6">
+      <form  method = "post">
+         {% csrf_token %}
+        <label for="email" class="form-label mt-3">Email:</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text">
+            <i class="bi bi-envelope-fill"></i>
+          </span>
+          <input type="email" class="form-control" name="email" placeholder="e.g. adarsh@example.com">
+          <span class="input-group-text formtooltip" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Enter email we can reply to...">
+            <i class="bi bi-question"></i>
+          </span>
+        </div>
+
+
+        <label for="name" class="form-label mt-3">Name:</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text">
+            <i class="bi bi-person-fill"></i> </span>
+          <input type="text" class="form-control " name="name" placeholder="e.g. Adarsh">
+
+          <span class="input-group-text formtooltip" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Enter your name">
+            <i class="bi bi-question"></i>
+          </span>
+        </div>
+
+
+        <label for="subject" class="form-label mt-3 ">Select the subject of query: </label>
+
+        <select name="subject" class="form-select">
+          <option value="pricing">pricing query</option>
+          <option value="functionality"> functionality query</option>
+          <option value="other">other query</option>
+        </select>
+
+        <div class="form-floating my-3">
+          <textarea class="form-control" name="query" cols="83" rows="40"></textarea>
+          <label for="query" class="form-label">Your query...</label>
+
+        </div>
+
+        <div class="text-center mb-4">
+          <button type="submit" class="btn btn-danger" >Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock content %}
